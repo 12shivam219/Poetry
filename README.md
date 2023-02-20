@@ -1,6 +1,15 @@
-#Poet Poetry Generator
+# Poet Poetry Generator
 
 This is a project that generates random poems using a collection of poems from various poets. The poems are displayed on the webpage and can be read out loud using the built-in text-to-speech functionality in your browser.
+
+
+# Credits
+
+This project was created by Shivam tiwari. The poems used in this project are from the following poets:
+
+# MIRZA GHALIB
+# JAUN ELIYA
+# NARESH KUMAR SHAD
 
 This is a JavaScript code that fetches data from an API and uses the Web Speech API to read the fetched text out loud. Here's a breakdown of the code:
 
