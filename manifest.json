@@ -1,13 +1,24 @@
 {
-    "name":"Poetry",
-    "version":"0.0.1",
-    "manifest_version":3,
-    "action" : {
-        "default_popup":"index.html",
-        "default_icon":"poetry.jpg"
+    "name": "Poetry",
+    "description":"Poet poetry generator",
+    "version": "0.0.1",
+    "manifest_version": 3,
+    "icons": {
+        "19": "poetry.jpg",
+        "38": "poetry.jpg",
+        "48": "poetry.jpg",
+        "128": "poetry.jpg"
     },
-    "icons" :{
-        "128":"poetry.jpg"
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": {
+            "19": "poetry.jpg",
+            "38": "poetry.jpg",
+            "48": "poetry.jpg",
+            "128": "poetry.jpg"
+        }
     },
-    "permissions" :["activeTab"]
+    "permissions": [
+        "activeTab"
+    ]
 }
