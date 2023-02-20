@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url(poetry-back.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100;
+}
+
+.container {
+    width: 500px;
+    height: 200px;
+    position: relative;
+}
+
+.read {
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+.read span{
+    font-family: 'Kalam', cursive;
+    font-size: 20px;
+    font-weight: 700;
+    
+}
+
+.read .read1 {
+    color: rgb(238, 89, 89);
+}
+
+.read .read2 {
+    color: gray;
+}
+
+.buttons {
+    padding: 10px 0px 0 10px;
+}

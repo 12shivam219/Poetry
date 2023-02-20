@@ -1,0 +1,13 @@
+{
+    "name":"Poetry",
+    "version":"0.0.1",
+    "manifest_version":3,
+    "action" : {
+        "default_popup":"index.html",
+        "default_icon":"poetry.jpg"
+    },
+    "icons" :{
+        "128":"poetry.jpg"
+    },
+    "permissions" :["activeTab"]
+}
