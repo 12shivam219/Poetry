@@ -49,4 +49,4 @@ speechSynthesis.speak(utterance) speaks the text using the Web Speech API if the
 speechSynthesis.pause() pauses the reading if the sound is turned off.
 
 
-Overall, this code shows how to use the Web Speech API to read text out loud from an API in a web application.
+# Overall, this code shows how to use the Web Speech API to read text out loud from an API in a web application.
