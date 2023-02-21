@@ -25,51 +25,53 @@ api().then((data) => {
         return;
     }
 
-
+    console.log(data)
+    let upText;
+    let belowText;
     //Generate Random number
-    const randomNumber = Math.floor(Math.random() * data.length) ;
+    const randomNumber = Math.floor(Math.random() * data.length);
 
     // Update the paragraph text with the first item in the data array
+    if (randomNumber < data.length-1) {
+        upText = data[randomNumber].poetry[0];
+        belowText = data[randomNumber].poetry[1];
+        paraRead1.textContent = `${upText}`;
+        paraRead2.textContent = `${belowText}`;
 
-    const upText = data[randomNumber].poetry[0];
-    const belowText = data[randomNumber].poetry[1];
-    paraRead1.textContent = `${upText}`;
-    paraRead2.textContent = `${belowText}`;
-    paraRead = `${upText} ${belowText}`;
+        paraRead = `${upText} ${belowText}`;
+        console.log(randomNumber)
+        // Add an event listener to the Read button
+        readButton.addEventListener('click', () => {
+            const utterance = new SpeechSynthesisUtterance();
 
-    // Add an event listener to the Read button
-    readButton.addEventListener('click', () => {
-        const utterance = new SpeechSynthesisUtterance();
+            // Set the text, language, and rate of the utterance
+            utterance.text = paraRead;
+            utterance.lang = 'hi-IN';
+            utterance.rate = 0.7;
+            utterance.volume = 1;
 
+            try {
 
-
-
-        // Set the text, language, and rate of the utterance
-        utterance.text = paraRead;
-        utterance.lang = 'hi-IN';
-        utterance.rate = 0.7;
-        utterance.volume = 1;
-
-        try {
-
-            //Sound ON Or OFF
-            if (!isOn) {
-                readButton.innerHTML = `<img src="sound.png" alt="" width="30" height="30"> ON`
-                isOn = true;
-                // Speak the utterance using the speech synthesis API
+                // Sound ON Or OFF
+                if (!isOn) {
+                    readButton.innerHTML = `<img src="sound.png" alt="" width="30" height="30"> ON`
+                    isOn = true;
+                    // Speak the utterance using the speech synthesis API
                 speechSynthesis.speak(utterance);
-            }
-            else {
-                readButton.innerHTML = `<img src="sound.png" alt="" width="30" height="30"> OFF`
-                isOn = false;
-                // pause the utterance using the speech synthesis API
-                speechSynthesis.pause();
-            }
+                console.log(utterance)
+                }
+                else {
+                    readButton.innerHTML = `<img src="sound.png" alt="" width="30" height="30"> OFF`
+                    isOn = false;
+                    // pause the utterance using the speech synthesis API
+                    speechSynthesis.pause();
+                }
 
-        } catch (error) {
-            console.error('Error speaking text:', error);
-        }
-    });
+            } catch (error) {
+                console.error('Error speaking text:', error);
+            }
+        });
+    }
 }).catch((error) => {
     console.error('Error loading data:', error);
 });
